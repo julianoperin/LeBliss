@@ -22,9 +22,17 @@
     }}
   </head>
   <body>
-    {% assign line = "Hello " %} {% assign arr = "Juliano, Antonio, Perin" |
-    split: ", " %}
+    {% assign value = true %} {% if value %}
+    <h1>Showing Products</h1>
+    {% else %}
+    <h1>Not Showing Products</h1>
+    {% endif %}
+
+    <!-- {% assign line = "Hello " %} {% assign arr = "Juliano, Antonio, Perin" |
+    split: ", " %} {% assign number = 2 | plus: 2%%}
     <h1>{{ line }} {{ arr[1] }}</h1>
+    <h2>{{ number }}</h2> -->
+
     <!-- {% for link in linklists.main-menu.links %} {% assign child_list_handle =
     link.title | handleize %} {% if linklists[child_list_handle].links != blank
     %}
