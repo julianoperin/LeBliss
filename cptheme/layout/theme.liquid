@@ -22,11 +22,23 @@
     }}
   </head>
   <body>
-    {% assign value = true %} {% if value %}
+    <!-- If switch statement -->
+    {% assign value = "Joe" %} {% case value %} {% when "Juliano" %}
+    <h1>Hey Juliano</h1>
+    {% when "Joe" %}
+    <h1>Hey Joe</h1>
+    {% when "Marta" %}
+    <h1>Hey Marta</h1>
+    {% else %}
+    <h1>Hey else</h1>
+    {% endcase %}
+
+    <!-- If Statement -->
+    <!-- {% assign value = true %} {% if value %}
     <h1>Showing Products</h1>
     {% else %}
     <h1>Not Showing Products</h1>
-    {% endif %}
+    {% endif %} -->
 
     <!-- {% assign line = "Hello " %} {% assign arr = "Juliano, Antonio, Perin" |
     split: ", " %} {% assign number = 2 | plus: 2%%}
