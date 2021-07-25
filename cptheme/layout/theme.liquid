@@ -13,6 +13,12 @@
     {{
       content_for_header
     }}
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <!-- Header hook for plugins -->
     {{
       "application.css" | asset_url | stylesheet_tag
@@ -22,52 +28,153 @@
     }}
   </head>
   <body>
-    <!-- If switch statement -->
-    {% assign value = "Joe" %} {% case value %} {% when "Juliano" %}
-    <h1>Hey Juliano</h1>
-    {% when "Joe" %}
-    <h1>Hey Joe</h1>
-    {% when "Marta" %}
-    <h1>Hey Marta</h1>
-    {% else %}
-    <h1>Hey else</h1>
-    {% endcase %}
-
-    <!-- If Statement -->
-    <!-- {% assign value = true %} {% if value %}
-    <h1>Showing Products</h1>
-    {% else %}
-    <h1>Not Showing Products</h1>
-    {% endif %} -->
-
-    <!-- {% assign line = "Hello " %} {% assign arr = "Juliano, Antonio, Perin" |
-    split: ", " %} {% assign number = 2 | plus: 2%%}
-    <h1>{{ line }} {{ arr[1] }}</h1>
-    <h2>{{ number }}</h2> -->
-
-    <!-- {% for link in linklists.main-menu.links %} {% assign child_list_handle =
-    link.title | handleize %} {% if linklists[child_list_handle].links != blank
-    %}
-    <a href="{{ link.url }}">{{ link.title }}</a>
-    [{% for childlink in linklists[child_list_handle].links %}
-    <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-    {% endfor %}] {% else %}
-    <a href="{{ link.url }}">{{ link.title }}</a>
-    {% endif %} {% endfor %}
-
-    <a href="/cart">cart</a>
-    <h1>Juliano Store</h1>
-
-    {% if shop.customer_accounts_enabled %} {% if customer %}
-    <a href="/account">account</a>
-    {{ "log out" | customer_logout_link }}
-    {% else %}
-    {{ "log in " | customer_login_link }}
-    {{ "register" | customer_register_link }}
-    {% endif %} {% endif %}
-
     <main role="main">
       {{ content_for_layout }}
-    </main> -->
+    </main>
+
+    <!-- BootStrap -->
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Pricing</h1>
+      <p class="lead">
+        Quickly build an effective pricing table for your potential customers
+        with this Bootstrap example. It's built with default Bootstrap
+        components and utilities with little customization.
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Free</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">
+              $0 <small class="text-muted">/ mo</small>
+            </h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>10 users included</li>
+              <li>2 GB of storage</li>
+              <li>Email support</li>
+              <li>Help center access</li>
+            </ul>
+            <button
+              type="button"
+              class="btn btn-lg btn-block btn-outline-primary"
+            >
+              Sign up for free
+            </button>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Pro</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">
+              $15 <small class="text-muted">/ mo</small>
+            </h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>20 users included</li>
+              <li>10 GB of storage</li>
+              <li>Priority email support</li>
+              <li>Help center access</li>
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-primary">
+              Get started
+            </button>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Enterprise</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">
+              $29 <small class="text-muted">/ mo</small>
+            </h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>30 users included</li>
+              <li>15 GB of storage</li>
+              <li>Phone and email support</li>
+              <li>Help center access</li>
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-primary">
+              Contact us
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-12 col-md">
+            <img
+              class="mb-2"
+              src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg"
+              alt=""
+              width="24"
+              height="24"
+            />
+            <small class="d-block mb-3 text-muted">© 2017-2018</small>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Features</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Cool stuff</a></li>
+              <li><a class="text-muted" href="#">Random feature</a></li>
+              <li><a class="text-muted" href="#">Team feature</a></li>
+              <li><a class="text-muted" href="#">Stuff for developers</a></li>
+              <li><a class="text-muted" href="#">Another one</a></li>
+              <li><a class="text-muted" href="#">Last time</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Resource</a></li>
+              <li><a class="text-muted" href="#">Resource name</a></li>
+              <li><a class="text-muted" href="#">Another resource</a></li>
+              <li><a class="text-muted" href="#">Final resource</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>About</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Team</a></li>
+              <li><a class="text-muted" href="#">Locations</a></li>
+              <li><a class="text-muted" href="#">Privacy</a></li>
+              <li><a class="text-muted" href="#">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+      ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>'
+        );
+    </script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <script>
+      Holder.addTheme("thumb", {
+        bg: "#55595c",
+        fg: "#eceeef",
+        text: "Thumbnail",
+      });
+    </script>
   </body>
 </html>
