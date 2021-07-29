@@ -1,4 +1,6 @@
-{% section 'section_pricing' %} {% comment %} {% include "pricing" %} {% for
+{{ content_for_index }}
+
+{% comment %} {% include "pricing" %} {% section 'section_pricing' %} {% for
 product in collections.frontpage.products limit:4 %}
 <div>
   <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
